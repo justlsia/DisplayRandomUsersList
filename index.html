@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste d'utilisateurs random</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center">Liste d'utilisateurs random</h1>
+        
+        <!-- Tableau HTML où les données seront insérées -->
+        <table id="userTable" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Genre</th>
+                    <th>Nom</th>
+                    <th>Photo</th>
+                    <th>Ville</th>
+                    <th>Pays</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Les lignes seront ajoutées ici dynamiquement -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Appel du script -->
+    <script src="index.js"></script>
+</body>
+</html>
+
