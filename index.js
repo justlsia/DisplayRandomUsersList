@@ -74,9 +74,9 @@ function displayUsers(users) {
         cell_Ville.textContent = user.location.city;
 
         // Pays avec drapeau
-        // Crée une chaîne HTML pour afficher le drapeau du pays
+        // Créer une chaîne HTML pour afficher le drapeau du pays
         const countryFlag = `<img src="https://flagcdn.com/${user.nat.toLowerCase()}.svg" alt="${user.location.country}" style="width: 30px; height: auto;">`;
-        // Insère le drapeau du pays dans la cellule de pays.
-        cell_Pays.innerHTML = countryFlag; // Affichage du drapeau
+        // Insèrer le drapeau du pays dans la cellule de pays.
+        cell_Pays.innerHTML = countryFlag; // Afficher le drapeau
     });
 }
