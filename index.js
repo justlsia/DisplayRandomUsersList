@@ -62,13 +62,13 @@ function displayUsers(users) {
         const fullName = `${user.name.title} ${user.name.first} ${user.name.last}`;
         cell_Nom.textContent = fullName;
 
-        // Photo
+        // Photo de l'utilisateur
         const img = document.createElement('img');          // Crée un nouvel élément d'image.
-        img.src = user.picture.thumbnail;                   // Définit la source de l'image à la miniature de la photo de l'utilisateur.
-        img.alt = fullName;                                 // Définit le texte alternatif de l'image au nom complet de l'utilisateur.
+        img.src = user.picture.thumbnail;                   // Définir la source de l'image à la miniature de la photo de l'utilisateur.
+        img.alt = fullName;                                 // Définir le texte alternatif de l'image au nom complet de l'utilisateur.
         img.style.width = '50px';                           // Taille de l'image
-        img.style.height = 'auto';                          // Hauteur automatique
-        cell_Photo.appendChild(img);                        // Ajoute l'élément d'image à la cellule de photo.
+        img.style.height = 'auto';                          // Hauteur de l'image
+        cell_Photo.appendChild(img);                        // Ajouter l'élément d'image à la cellule de photo.
 
         // Ville
         cell_Ville.textContent = user.location.city;
