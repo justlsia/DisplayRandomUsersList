@@ -22,7 +22,7 @@ function afficherUtilisateurs(users) {
         const cell_Pays = row.insertCell(5);
 
         // Remplir les cellules avec les données de l'utilisateur
-        cell_Index.textContent = index + 1; // Numéro de l'utilisateur
+        cell_Index.textContent = index + 1; // Numéro/index de l'utilisateur en cours
 
         // Genre avec icône
         // Si le genre est masculin
