@@ -52,8 +52,51 @@ function afficherUtilisateurs(users) {
         const drapeauPays = `<img src="https://flagcdn.com/${user.nat.toLowerCase()}.svg" alt="${user.location.country}" style="width: 30px; height: auto;">`;
         // Insèrer le drapeau du pays dans la cellule de pays.
         cell_Pays.innerHTML = drapeauPays; // Afficher le drapeau
+
+
+        // Afficher la météo du pays 
+        // Appeller API : OpenWeatherMap
+        const OpenWeatherMeteo = `https://api.openweathermap.org/data/2.5/weather?lat=${user.location.coordinates.latitude}&lon=${user.location.coordinates.longitude}&appid=967aa273dc459221e3d0463449e809d2&units=metric;`;
+
+        // Effectuer une requête HTTP pour récupérer les données météorologiques
+        fetch(OpenWeatherMeteo)
+
+            // Un fois la réponse reçu
+            .then(function(response) {
+
+                 //  Afficher le statut de la réponse dans la console
+                console.log(response.status);
+
+                // Si les données songt bien récupérer
+                if (response.status == 200) {
+                    // On parse/transforme en json
+                    response.json()
+                    // Une fois la conversion du json (promesse) effectuée
+                    .then((weatherData) => {
+
+                        console.log(weatherData)
+
+                        // Créer la nouvelle cellule dans le tableau
+                        const cell_IconeMeteo = row.insertCell(6);
+
+                        // Créer une chaine HTML pour afficher l'icône météo (URL image)
+                        const IconeMeteo = `<img src="https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png">`;
+
+                        // Insérer l'icone dans la cellule de l'icone météo
+                        cell_IconeMeteo.innerHTML = IconeMeteo;
+                        
+
+
+                    })
+                }
+
+            }) 
+
     });
 }
+
+
+
 
 
 // Fetch : Effectue une requête HTTP pour récupérer des données
@@ -83,4 +126,3 @@ fetch(endpoint)
         // Afficher l'erreur
         console.log(error);
     });
-
